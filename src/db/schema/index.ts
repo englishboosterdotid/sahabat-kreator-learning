@@ -10,3 +10,5 @@ export * from './org/team';
 export * from './org/team-member';
 
 export * from './relation';
+
+export * from './integration/repliz';

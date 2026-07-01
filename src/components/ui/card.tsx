@@ -4,12 +4,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const cardVariants = cva(
-  "rounded-2xl border transition-colors",
+  "rounded-2xl border bg-white shadow-sm transition-all duration-200 hover:shadow-md dark:bg-zinc-900",
   {
     variants: {
       variant: {
         default:
-          "border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900",
+          "border-zinc-200 dark:border-zinc-800",
 
         outline:
           "border-zinc-300 bg-transparent dark:border-zinc-700",
@@ -99,7 +99,7 @@ export function CardContent({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn(className)}
+      className={cn("flex flex-col gap-4", className)}
       {...props}
     />
   );
