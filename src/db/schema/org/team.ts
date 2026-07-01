@@ -14,6 +14,7 @@ export const team = pgTable(
       () => /* @__PURE__ */ new Date(),
     ),
     slug: text("slug"),
+    logo: text("logo"),
   },
   (table) => [index("team_organizationId_idx").on(table.organizationId)],
 );

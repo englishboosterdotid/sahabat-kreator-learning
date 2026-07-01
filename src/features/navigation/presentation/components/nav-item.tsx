@@ -3,12 +3,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  Article,
   Buildings,
   CalendarDots,
   ChartBar,
+  ChatCircleText,
+  ChatTeardropText,
   Folder,
   Gear,
   House,
+  ShareNetwork,
   Sparkle,
   Users,
 } from "@phosphor-icons/react";
@@ -18,11 +22,15 @@ import { cn } from "@/lib/utils";
 const iconMap: Record<string, React.ElementType> = {
   House,
   Sparkle,
+  Article,
   CalendarDots,
-  ChartBar,
+  ChatCircleText,
+  ChatTeardropText,
   Buildings,
+  ShareNetwork,
   Folder,
   Users,
+  ChartBar,
   Gear,
 };
 

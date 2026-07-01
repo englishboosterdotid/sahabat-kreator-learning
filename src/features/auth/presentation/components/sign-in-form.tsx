@@ -1,9 +1,4 @@
-import {
-  Button,
-  Input,
-  Label,
-} from "@/components/ui";
-
+import { Button, Input, Label, PasswordInput} from "@/components/ui";
 import { signInAction } from "../actions";
 
 export function SignInForm() {
@@ -22,11 +17,11 @@ export function SignInForm() {
       <div className="space-y-2">
         <Label required>Password</Label>
 
-        <Input
-          name="password"
-          type="password"
-          placeholder="••••••••"
-        />
+       <PasswordInput
+  name="password"
+  placeholder="••••••••"
+  autoComplete="current-password"
+/>
       </div>
 
       <Button className="w-full">

@@ -41,4 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # catatan
-not-used.md
+repliz-api-doc.md
+sumopod.md
+AGENTS.md
+CLAUDE.md

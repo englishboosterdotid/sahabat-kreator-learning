@@ -8,3 +8,5 @@ export * from './org/member';
 export * from './org/invitation';
 export * from './org/team';
 export * from './org/team-member';
+
+export * from './relation';

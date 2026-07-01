@@ -20,7 +20,7 @@ export function CreateOrganizationModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
       <div className="w-full max-w-md rounded-2xl bg-white p-6 dark:bg-zinc-900">
-        <h2 className="text-lg font-semibold">
+        <h2 className="text-lg font-semibold text-zinc-900 dark:text-white">
           Create Organization
         </h2>
 
@@ -32,7 +32,7 @@ export function CreateOrganizationModal({
           className="mt-6 space-y-4"
         >
           <div className="space-y-2">
-            <Label required>
+            <Label required className="text-zinc-700 dark:text-zinc-300">
               Organization Name
             </Label>
 

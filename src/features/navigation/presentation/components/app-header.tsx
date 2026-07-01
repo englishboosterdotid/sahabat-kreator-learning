@@ -4,6 +4,7 @@ import { List, Bell, Gear, SignOut } from "@phosphor-icons/react";
 import { useState } from "react";
 import Link from "next/link";
 import { signOutAction } from "@/features/auth/presentation/actions";
+import { ModeToggle } from "@/components/mode-toggle";
 
 type User = {
   name: string;
@@ -16,45 +17,49 @@ type Props = {
   user: User;
 };
 
-export function AppHeader({ onOpenSidebar, user }: Props) {
+export function AppHeader({
+  onOpenSidebar,
+  user,
+}: Props) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const getInitials = (name: string) => {
     return name
-      .split(" ")
-      .map((n) => n[0])
-      .join("")
+      .split(' ')
+      .map(n => n[0])
+      .join('')
       .toUpperCase()
       .slice(0, 2);
   };
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-zinc-200 bg-white px-6 dark:border-zinc-800 dark:bg-zinc-950">
-      <button onClick={onOpenSidebar} className="lg:hidden">
+      <button
+        onClick={onOpenSidebar}
+        className="lg:hidden"
+      >
         <List size={24} />
       </button>
 
-      <h1 className="font-semibold">Dashboard</h1>
+      <h1 className="font-semibold text-zinc-900 dark:text-white">
+        Dashboard
+      </h1>
 
-      <div className="flex items-center gap-4">
-        {/* Notifikasi */}
-        <button className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full">
+      <div className="flex items-center gap-2">
+        <button className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full text-zinc-700 dark:text-zinc-300">
           <Bell size={20} />
         </button>
+        
+        <ModeToggle />
 
-        {/* User Avatar & Dropdown */}
         <div className="relative">
-          <button
+          <button 
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center gap-2 rounded-full p-1 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            className="flex items-center rounded-full p-1 hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white font-semibold text-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white font-semibold">
               {user.image ? (
-                <img
-                  src={user.image}
-                  alt={user.name}
-                  className="h-full w-full rounded-full object-cover"
-                />
+                <img src={user.image} alt={user.name} className="h-full w-full rounded-full object-cover" />
               ) : (
                 getInitials(user.name)
               )}
@@ -63,8 +68,8 @@ export function AppHeader({ onOpenSidebar, user }: Props) {
 
           {isDropdownOpen && (
             <>
-              <div
-                className="fixed inset-0 z-40"
+              <div 
+                className="fixed inset-0 z-40" 
                 onClick={() => setIsDropdownOpen(false)}
               />
               <div className="absolute right-0 top-full z-50 mt-2 w-56 rounded-xl border border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-950">

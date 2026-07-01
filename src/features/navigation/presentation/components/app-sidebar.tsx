@@ -10,12 +10,19 @@ export function AppSidebar() {
         </h2>
       </div>
 
-      <nav className="flex flex-1 flex-col gap-1 p-4">
-        {navigation.map((item) => (
-          <NavItem
-            key={item.href}
-            {...item}
-          />
+      <nav className="flex flex-1 flex-col gap-4 p-4">
+        {navigation.map((section) => (
+          <div key={section.title} className="flex flex-col gap-1">
+            <h3 className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 px-3">
+              {section.title}
+            </h3>
+            {section.items.map((item) => (
+              <NavItem
+                key={item.href}
+                {...item}
+              />
+            ))}
+          </div>
         ))}
       </nav>
     </aside>

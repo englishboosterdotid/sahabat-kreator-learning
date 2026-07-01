@@ -23,7 +23,7 @@ export function MobileSidebar({ isOpen, onClose, content }: Props) {
 
       {/* Sidebar */}
       <aside
-        className="fixed left-0 top-0 z-50 h-full w-72 bg-white dark:bg-zinc-950 transition-transform lg:hidden"
+        className="fixed left-0 top-0 z-50 flex h-full w-72 flex-col bg-white dark:bg-zinc-950 transition-transform lg:hidden"
         style={{ transform: isOpen ? "translateX(0)" : "translateX(-100%)" }}
       >
         <div className="flex h-16 items-center justify-between border-b border-zinc-200 px-6 dark:border-zinc-800">
@@ -35,7 +35,7 @@ export function MobileSidebar({ isOpen, onClose, content }: Props) {
             <X size={20} />
           </button>
         </div>
-        <div className="flex flex-col">{content}</div>
+        <div className="flex flex-1 flex-col overflow-y-auto">{content}</div>
       </aside>
     </>
   );
